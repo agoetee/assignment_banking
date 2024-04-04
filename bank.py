@@ -34,6 +34,16 @@ class SavingsAccount(Account):
         print(f"Your balance after rate {self.interest_rate} is ${self.balance}")
 
 class CurrentAccount(Account):
-    def __init__
+    def __init__(self, account_number, account_name, overdraft_limit):
+        super().__init__(account_number, account_name)
+        self.overdraft_limit = overdraft_limit
+
+    def check_overdraft(self):
+        if self.balance <= 0 and abs(self.balance) > self.overdraft_limit:
+            print("You have exceeded your overdraft limit")
+        else:
+            print("You are within your overdraft limit")
+
+
 ac1 = Account(101,"Agoe" )
 ac1.withdraw()
