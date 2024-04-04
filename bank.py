@@ -24,10 +24,16 @@ class Account:
         print(f"Your account balance is ${self.balance}")
 
 class SavingsAccount(Account):
-    def __init__(self):
-        super().__init__()
-        self.interest_rate
+    def __init__(self, account_number, account_name, interest_rate):
+        super().__init__(account_number, account_name)
+        self.interest_rate = interest_rate
 
-    def interest_method(self):
+    def calculate_interest(self):
+        interest = self.balance * self.interest_rate
+        self.balance += interest
+        print(f"Your balance after rate {self.interest_rate} is ${self.balance}")
+
+class CurrentAccount(Account):
+    def __init__
 ac1 = Account(101,"Agoe" )
 ac1.withdraw()
