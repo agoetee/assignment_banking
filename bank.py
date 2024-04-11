@@ -45,5 +45,22 @@ class CurrentAccount(Account):
             print("You are within your overdraft limit")
 
 
+class Bank:
+
+    def __init__(self):
+        self.list_of_accounts = []
+
+    def add_account(self, Account):
+        self.list_of_accounts.append(Account)
+
+
+    def remove_account(self, Account):
+        self.list_of_accounts.remove(Account)
+
+    def view_all_accounts(self):
+        for account in self.list_of_accounts:
+            return account
+
+
 ac1 = Account(101,"Agoe" )
 ac1.withdraw()
