@@ -59,8 +59,21 @@ class Bank:
 
     def view_all_accounts(self):
         for account in self.list_of_accounts:
-            return account
+            print(account)
 
 
-ac1 = Account(101,"Agoe" )
-ac1.withdraw()
+kofi = Account("101", "Kofi")
+ama = SavingsAccount("102", "Ama", 5)
+kwame = CurrentAccount("103", "kwame", 2000)
+#ama.deposit()
+#ama.withdraw()
+#ama.get_balance()
+
+adb1 = Bank()
+adb1.add_account(ama)
+adb1.add_account(kofi)
+adb1.add_account(kwame)
+adb1.view_all_accounts()
+
+print(kofi.account_name, kofi.account_number)
+print(f"Name is {ama.account_name}, Number: {ama.account_number}, int. rt: {ama.interest_rate}")
